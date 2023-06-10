@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <style>
+    input[id = "desc"] {
+        width: 90%;
+        height: 190px;
+        padding: 20px 20px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        background-color: #f8f8f8;
+        resize: none;
+        padding: 4px;
+      }
+    
+      .city {
+        background-color:crimson;
+        color: white;
+        padding: 10px;
+        width :98%;
+      }
+
+      .lab{
+        font-size: x-large;
+        background-color: crimson;
+        color: blanchedalmond;
+        padding: 5px;
+      }
+
+      input[id = "title"] {
+        background-color: #f8f8f8;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        width: 31%;
+        height: 30px;
+        padding: 4px;
+      }
+
+      .o{
+        background-image: url("2.gif");
+        width: 70%;
+      }
+
+      .foo{
+        color: #f8f8f8;
+        padding-top: 11%;
+      }
+
+      button{
+        background-color: chartreuse;
+        padding: 10px;
+      }
+
+      body {
+        background-image: url("giphy.gif");
+        background-repeat: no-repeat;
+        background-size:cover;
+      }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <div class = "o">
+        <br>
+    <center><h1 class="city"><center> NOTICE BOARD </center></h1></center>
+    <center>
+    <form action="process.php" method="post" onsubmit="return validate()">
+        <label class = "lab" for="title">  Enter notice title  </label><br><br>
+        <input type = "text" id = "title" name = "message title"><br><br>
+        <label class="lab" for="desc" name = "message description">  Enter notice description  </label><br><br>
+        <input type = "text" id = "desc"><br><br>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+    </center>
+    <br>
+    </div>
+    </center>
+
+    <footer class="foo">
+      <div>
+        <span class="text-muted"><center>&copy; 2023 My Website. All rights reserved.</center></span>
+      </div>
+    </footer>
+
+    <script>
+      function validate(){
+        var title = document.getElementById("title").value;
+        var desc = document.getElementById("desc").value;
+        if (title.length == 0){
+          alert("blank input");
+          return false;
+          }
+        if (desc.length == 0){
+          alert("blank input")
+          return false;
+        }
+      }
+    </script>
+      <script>
+        function submitValue() {
+          // Get the value entered by the user
+          var title = document.getElementById('title');
+          var tvalue = title.value;
+          
+          // Store the value in localStorage
+          localStorage.setItem('myValue', tvalue);
+          
+          // Redirect to the second page
+          window.location.href = 'index.html';
+        }
+      </script>
+</body>
+</html>
